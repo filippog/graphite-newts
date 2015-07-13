@@ -1,0 +1,7 @@
+.coverage
+.eggs
+*.egg
+graphite_newts.egg-info
+build/
+dist/
+venv/

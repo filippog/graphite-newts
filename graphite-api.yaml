@@ -1,0 +1,11 @@
+# sample graphite-api config showing graphite-newts usage.
+
+newts:
+  url: 'http://localhost:8042'
+search_index: /tmp/graphite-newts_index
+finders:
+  - graphite_newts.finder.NewtsFinder
+functions:
+  - graphite_api.functions.SeriesFunctions
+  - graphite_api.functions.PieFunctions
+time_zone: UTC
