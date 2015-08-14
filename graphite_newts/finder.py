@@ -117,7 +117,7 @@ class NewtsFinder(object):
 
     def _search_nodes(self, pattern):
         parts = pattern.split('.')
-        queue = [('_tree:root', parts)]
+        queue = [('_parent:_root', parts)]
 
         while queue:
             search_term, patterns = queue.pop()
@@ -128,7 +128,7 @@ class NewtsFinder(object):
             # retrieved metrics (the leaves)
             branches = {}
             for resource, metrics in self._run_search(search_term):
-                if search_term == '_tree:root':
+                if search_term == '_parent:_root':
                     branch = resource
                 else:
                     # XXX column is valid in graphite names
