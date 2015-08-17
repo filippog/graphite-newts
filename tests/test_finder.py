@@ -56,7 +56,7 @@ class FakeNewtsClient(object):
 
     def search(self, *terms):
         for term in terms:
-            if term == '_tree:root':
+            if term == '_parent:_root':
                 for r in self._resources:
                     if ':' in r:
                         continue
@@ -85,7 +85,7 @@ class TestFinderQueries(graphite_api_app.TestCase):
 
     def testClientSelfTest(self):
         self.client._insert('r1:r2:r3:r4', 'metric1')
-        for resource, metrics in self.client.search('_tree:root'):
+        for resource, metrics in self.client.search('_parent:_root'):
             self.assertEqual(len(metrics), 0)
             self.assertEqual(resource, 'r1')
 
