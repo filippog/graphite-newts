@@ -15,7 +15,7 @@ You will need newts and cassandra running somewhere on your network, for example
 
 You'll need also a build environment for cffi, thus:
 
-    apt-get install build-environment python-dev libcffi-dev
+    apt-get install build-essential python-dev libcffi-dev
 
 Underneath you'll need a `newts` server running on `localhost:8080`, you can
 follow the instructions on [how to get started with newts](https://github.com/OpenNMS/newts/wiki/GettingStarted).
